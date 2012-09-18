@@ -1,61 +1,26 @@
-jQuery ScrollUp
+Price tables
 ================
 
-A small jQuery plugin that adds "to the top"-link in the bottom of the screen.
 
-The plugin adds a small arrow to the bottom of the screen, and when the user clicks it the page automatically scrolls the user to the top of the screen. With a smooth animaton of course. The arrow is only visible when the user has scrolled down the page, for maximum user experience.
+Licence
+================
+Copyright (c) 2012 Filip Stefansson
 
-![jQuery ScrollUp in action](http://filipstefansson.github.com/jquery-scroll-up/example.png)
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
 
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
 
-## Features
-* Only 4k
-* Smooth scrolling
-* Only shown if the user has scrolled.
-
-## WordPress plugin
-
-You can find a WordPress plugin version of this here:
-[WordPress Plugin](http://wordpress.org/extend/plugins/jquery-scrollup/)
-
-## Usage
-Import jquery.scroll-up.js
-
-```<script type="text/javascript" src="min/jquery.scroll-up.js"></script>```
-
-Add this code to initialize the plugin:
-
-```javascript
-$.scrollUp()
-```
-
-## Options:
-
-**location:** - Should be 'right' or 'left'.
-
-**image_src:** A string with the path to your image. Default: 'img/arrow_up.png'.
-
-**wait:** An integer with the amout of pixel the user should scroll before the link is displayed.
-
-**time:** An integer with the amount of milliseconds the smooth scroll animation should last.
-
-
-
-
-## Example
-
-```
-<script type="text/javascript" src="min/jquery.scroll-up.js"></script>
-<script>
-$.scrollUp({
-	'location': 'right'
-	'image_src': 'img/arrow_up.png'
-	'wait': 200
-	'time': 300
-})
-</script>
-```
-
-## Dependencies
-
-* Tested with jQuery 1.7.2, but probably works with lower versions.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
