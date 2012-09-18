@@ -1,3 +1,8 @@
+
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+
 @pt_red: #d95454;
 @pt_pink: #e856c4;
 @pt_purple: #b356e8;
@@ -8,6 +13,10 @@
 @pt_orange: #d27740;
 @pt_grey: #37353c;
 
+
+/* ==========================================================================
+   The price table
+   ========================================================================== */
 
 .price-table {
 	font-family: 'Helvetica Neue', Helvetica, Arial;
@@ -185,8 +194,6 @@
 			}
 		}
 
-
-	/* Colors */
 	.red {
 		background: @pt_red;
 		&.dark { background: darken(@pt_red, 10%); }
@@ -233,10 +240,79 @@
 		&.light  {background: lighten(@pt_grey, 10%); }
 	}
 
+}
 
+/* ==========================================================================
+   Media queris(for responsive)
+   ========================================================================== */
+
+@media (max-width: 880px) {
+	
+	.price-table .column header div.price { 
+		.price { font-size: 40px; }
+		.price .dollar { top: 10px; left: -12px; }
+		.price .month { bottom: 7px; right: -25px; }
+	}
 }
 
 
+
+@media (max-width: 750px) {
+
+	.price-table {
+
+		&.four-columns, &.three-columns {
+
+			.column {
+				width: 100%;
+				display: block;
+				.border-radius(0px);
+				border-top: 0px;
+				border-bottom: 0px;
+
+					&.highlight {
+						.box-shadow(none);
+						margin-top: 0px;
+					}
+
+					header {
+						.border-radius(0px);
+					}
+
+					.data {
+						.clearfix();
+
+							ul {
+								.clearfix();
+								background: #fcfcfc !important;
+
+									li {
+										float: left;
+										width: 33%;
+										box-sizing: border-box;
+
+											&.odd, &.even {
+												border: 0px !important;
+												background: #fcfcfc !important;
+											}
+									}
+							}
+
+					}
+
+					footer {
+						padding: 35px 0 35px 0;
+					}
+			}
+		}
+
+	}
+
+}
+
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
 
 .clearfix {
   *zoom: 1;

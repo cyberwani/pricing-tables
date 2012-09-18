@@ -1,9 +1,13 @@
+/* ==========================================================================
+   Colors
+   ========================================================================== */
+/* ==========================================================================
+   The price table
+   ========================================================================== */
 .price-table {
   font-family: 'Helvetica Neue', Helvetica, Arial;
   *zoom: 1;
   width: 100%;
-  /* Colors */
-
 }
 .price-table:before,
 .price-table:after {
@@ -244,6 +248,100 @@
 .price-table .grey.light {
   background: #504d57;
 }
+/* ==========================================================================
+   Media queris(for responsive)
+   ========================================================================== */
+@media (max-width: 880px) {
+  .price-table .column header div.price .price {
+    font-size: 40px;
+  }
+  .price-table .column header div.price .price .dollar {
+    top: 10px;
+    left: -12px;
+  }
+  .price-table .column header div.price .price .month {
+    bottom: 7px;
+    right: -25px;
+  }
+}
+@media (max-width: 750px) {
+  .price-table.four-columns .column,
+  .price-table.three-columns .column {
+    width: 100%;
+    display: block;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border-top: 0px;
+    border-bottom: 0px;
+  }
+  .price-table.four-columns .column.highlight,
+  .price-table.three-columns .column.highlight {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    margin-top: 0px;
+  }
+  .price-table.four-columns .column header,
+  .price-table.three-columns .column header {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  }
+  .price-table.four-columns .column .data,
+  .price-table.three-columns .column .data {
+    *zoom: 1;
+  }
+  .price-table.four-columns .column .data:before,
+  .price-table.three-columns .column .data:before,
+  .price-table.four-columns .column .data:after,
+  .price-table.three-columns .column .data:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  .price-table.four-columns .column .data:after,
+  .price-table.three-columns .column .data:after {
+    clear: both;
+  }
+  .price-table.four-columns .column .data ul,
+  .price-table.three-columns .column .data ul {
+    *zoom: 1;
+    background: #fcfcfc !important;
+  }
+  .price-table.four-columns .column .data ul:before,
+  .price-table.three-columns .column .data ul:before,
+  .price-table.four-columns .column .data ul:after,
+  .price-table.three-columns .column .data ul:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  .price-table.four-columns .column .data ul:after,
+  .price-table.three-columns .column .data ul:after {
+    clear: both;
+  }
+  .price-table.four-columns .column .data ul li,
+  .price-table.three-columns .column .data ul li {
+    float: left;
+    width: 33%;
+    box-sizing: border-box;
+  }
+  .price-table.four-columns .column .data ul li.odd,
+  .price-table.three-columns .column .data ul li.odd,
+  .price-table.four-columns .column .data ul li.even,
+  .price-table.three-columns .column .data ul li.even {
+    border: 0px !important;
+    background: #fcfcfc !important;
+  }
+  .price-table.four-columns .column footer,
+  .price-table.three-columns .column footer {
+    padding: 35px 0 35px 0;
+  }
+}
+/* ==========================================================================
+   Mixins
+   ========================================================================== */
 .clearfix {
   *zoom: 1;
 }
