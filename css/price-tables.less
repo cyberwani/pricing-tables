@@ -23,20 +23,31 @@
 	.clearfix();
 	width: 100%;
 
+		&.hover {
+
+				.column:hover {
+					-webkit-transition: .2s, .2s;
+					-moz-transition: .2s, .2s;
+					transition: .2s, .2s;
+					.box-shadow(0 0 5px #222);
+					z-index: 2;
+				}
+		}
+
 		.column {
 			position: relative;
 			float: left;
 			height: auto;
-			overflow-x: hidden;
-			overflow-y: auto;
 			box-sizing: border-box; // And there goes IE6, IE7 support...
 			border: 1px solid #fff;
 			.border-radius(10px 10px 0 0);
 			z-index: 1;
+			.box-shadow(0 0 2px #333);
 
-				&.highlight {
+
+				&.highlight, &.highlight:hover {
 					.box-shadow(5px 5px 10px -5px #333, -5px 5px 10px -5px #333);
-					z-index: 2;
+					z-index: 3;
 					margin-top: -10px;
 						
 						header {
@@ -140,6 +151,20 @@
 											background: #fcfcfc;
 											border-bottom: 1px solid #eee;
 										}
+
+										// the tooltips
+										a {
+											position: relative;
+											color: inherit;
+											text-decoration: none;
+											border-bottom: 1px dotted #444;
+
+												&:hover {
+													position: relative;
+													cursor: help;
+												}
+
+										}
 								}
 						}
 				}
@@ -158,7 +183,7 @@
 							display: block;
 							letter-spacing: 1px;
 							text-transform: uppercase;
-							margin: 0 30px;
+							margin: 0 25px;
 							color: #4d4d4d;
 							padding: 8px 20px;
 							background: -moz-linear-gradient(top, #555 0%, #444);
@@ -266,17 +291,13 @@
 			.column {
 				width: 100%;
 				display: block;
-				.border-radius(0px);
-				border-top: 0px;
-				border-bottom: 0px;
+				.border-radius(10px);
+				margin-bottom: 10px;
+				.box-shadow(0 0 2px #333);
 
 					&.highlight {
-						.box-shadow(none);
+						.box-shadow(0 0 2px #333);
 						margin-top: 0px;
-					}
-
-					header {
-						.border-radius(0px);
 					}
 
 					.data {
@@ -295,6 +316,10 @@
 												border: 0px !important;
 												background: #fcfcfc !important;
 											}
+
+											strong {
+												display: block;
+											}
 									}
 							}
 
@@ -302,12 +327,90 @@
 
 					footer {
 						padding: 35px 0 35px 0;
+						.border-radius(0 0 10px 10px);
 					}
 			}
 		}
 
 	}
 
+}
+
+
+/* ==========================================================================
+   Toltip
+   ========================================================================== */
+
+@zindexTooltip:           1030;
+@tooltipColor:            #fff;
+@tooltipBackground:       #000;
+@tooltipArrowWidth:       5px;
+@tooltipArrowColor:       @tooltipBackground;
+
+// Base class
+.tooltip {
+  position: absolute;
+  z-index: @zindexTooltip;
+  display: block;
+  visibility: visible;
+  padding: 5px;
+  font-size: 12px;
+  .opacity(0);
+  &.in     { .opacity(80); }
+  &.top    { margin-top:  -3px; }
+  &.right  { margin-left:  3px; }
+  &.bottom { margin-top:   3px; }
+  &.left   { margin-left: -3px; }
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+  max-width: 200px;
+  padding: 8px 12px;
+  color: @tooltipColor;
+  text-align: center;
+  text-decoration: none;
+  background-color: @tooltipBackground;
+  .border-radius(15px);
+}
+
+// Arrows
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.tooltip {
+  &.top .tooltip-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -@tooltipArrowWidth;
+    border-width: @tooltipArrowWidth @tooltipArrowWidth 0;
+    border-top-color: @tooltipArrowColor;
+  }
+  &.right .tooltip-arrow {
+    top: 50%;
+    left: 0;
+    margin-top: -@tooltipArrowWidth;
+    border-width: @tooltipArrowWidth @tooltipArrowWidth @tooltipArrowWidth 0;
+    border-right-color: @tooltipArrowColor;
+  }
+  &.left .tooltip-arrow {
+    top: 50%;
+    right: 0;
+    margin-top: -@tooltipArrowWidth;
+    border-width: @tooltipArrowWidth 0 @tooltipArrowWidth @tooltipArrowWidth;
+    border-left-color: @tooltipArrowColor;
+  }
+  &.bottom .tooltip-arrow {
+    top: 0;
+    left: 50%;
+    margin-left: -@tooltipArrowWidth;
+    border-width: 0 @tooltipArrowWidth @tooltipArrowWidth;
+    border-bottom-color: @tooltipArrowColor;
+  }
 }
 
 /* ==========================================================================
@@ -327,6 +430,10 @@
   }
 }
 
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
 
 .border-radius(@radius) {
   -webkit-border-radius: @radius;

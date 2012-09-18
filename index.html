@@ -14,7 +14,7 @@
 
     	<div class="wrapper">
     		
-    		<div class="price-table four-columns">
+    		<div class="price-table four-columns hover">
     			<div class="column">
     				<header class="green rounded">
     					<h4>Small</h4>
@@ -28,7 +28,7 @@
     				</header>
     				<div class="data">
     					<ul>
-    						<li class="odd"><strong>Free</strong> Setup</li>
+    						<li class="odd"><strong><a href="#" rel="tooltip" title="Nothing is free.">Free</a></strong> Setup</li>
     						<li class="even"><strong>1GB</strong> Storage</li>
     						<li class="odd"><strong>10GB</strong> Bandwidth</li>
     						<li class="even"><strong>5</strong> Workers</li>
@@ -55,7 +55,7 @@
     					<ul>
     						<li class="odd"><strong>Free</strong> Setup</li>
     						<li class="even"><strong>10GB</strong> Storage</li>
-    						<li class="odd"><strong>100GB</strong> Bandwidth</li>
+    						<li class="odd"><strong><a href="#" rel="tooltip" title="100GB is a lot.">100GB</a></strong> Bandwidth</li>
     						<li class="even"><strong>10</strong> Workers</li>
     						<li class="odd"><strong>2</strong> Domain</li>
     						<li class="even"><strong>Email</strong> Support</li>
@@ -81,7 +81,7 @@
     						<li class="odd"><strong>Free</strong> Setup</li>
     						<li class="even"><strong>100GB</strong> Storage</li>
     						<li class="odd"><strong>1000GB</strong> Bandwidth</li>
-    						<li class="even"><strong>25</strong> Workers</li>
+    						<li class="even"><strong><a href="#" rel="tooltip" title="What's a worker?">25</a></strong> Workers</li>
     						<li class="odd"><strong>5</strong> Domain</li>
     						<li class="even"><strong>24/7</strong> Support</li>
     					</ul>
@@ -107,7 +107,7 @@
     						<li class="even"><strong>Unlimited</strong> Storage</li>
     						<li class="odd"><strong>Unlimited</strong> Bandwidth</li>
     						<li class="even"><strong>Unlimited</strong> Workers</li>
-    						<li class="odd"><strong>Unlimited</strong> Domain</li>
+    						<li class="odd"><strong><a href="#" rel="tooltip" title="Yes, UNLIMITED!">Unlimited</a></strong> Domain</li>
     						<li class="even"><strong>24/7</strong> Support</li>
     					</ul>
     				</div>
@@ -118,5 +118,11 @@
     		</div>
 
     	</div>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/tooltip.js"></script>
+        <script type="text/javascript">
+            $('a[rel=tooltip]').tooltip();
+        </script>
     </body>
 </html>
